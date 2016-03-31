@@ -8,16 +8,21 @@ export default class List extends Component {
         }
 
         return this.props.items.map((item) => {
-            return <ListItem key={item.text} item={item} />
+            return <ListItem
+                        key={item.id}
+                        id={item.id}
+                        item={item}
+                        remove={this.props.remove}
+                        />
         });
     }
 
     render() {
         return (
             <div>
-                <ul>
+                <div>
                     {this.renderList()}
-                </ul>
+                </div>
             </div>
         )
     }

@@ -13,6 +13,7 @@ export default class App extends Component {
         };
 
         this.onAddClick = this.onAddClick.bind(this);
+        this.onDeleteClick = this.onDeleteClick.bind(this);
     }
 
     onAddClick(newItem) {
@@ -21,13 +22,23 @@ export default class App extends Component {
         });
     }
 
+    onDeleteClick(id) {
+        let newItems = this.state.items.slice();
+        const index = newItems.map((x) => { return x.id; }).indexOf(id);
+        newItems.splice(index, 1);
+        this.setState({ items: newItems });
+    }
+
     render() {
         return (
             <div className="text-center">
                 <h1>My Todo List</h1>
                 <Header add={this.onAddClick} />
                 <hr />
-                <List items={this.state.items} />
+                <List
+                    remove={this.onDeleteClick}
+                    items={this.state.items}
+                    />
             </div>
         );
     }

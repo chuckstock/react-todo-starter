@@ -4,7 +4,10 @@ export default class Header extends Component {
     constructor(props) {
         super(props);
 
+        this.id = 0;
+
         this.state = {
+            id: this.id,
             text: '',
             done: false
         };
@@ -18,8 +21,9 @@ export default class Header extends Component {
     }
 
     onAddClick() {
+        this.id++;
         this.props.add(this.state);
-        this.setState({ text: '' });
+        this.setState({ id: this.id, text: '' });
     }
 
     render() {
