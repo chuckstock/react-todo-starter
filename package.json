@@ -27,14 +27,9 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "firebase": "^2.4.2",
     "lodash": "^3.10.1",
-    "re-base": "^1.5.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-redux": "^4.0.0",
-    "react-router": "^2.0.1",
-    "reactfire": "^0.6.0",
     "redux": "^3.0.4"
   }
 }
