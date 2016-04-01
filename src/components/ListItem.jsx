@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 
 export default class ListItem extends Component {
-    constructor(props) {
-      super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-        id: this.props.id,
-        text: this.props.item.text,
-        done: this.props.item.done
-      }
+    this.state = {
+      id: this.props.id,
+      text: this.props.item.text,
+      done: this.props.item.done
+    };
 
-      this.onDoneChange = this.onDoneChange.bind(this);
-      this.onTextChange = this.onTextChange.bind(this);
-      this.onDeleteClick = this.onDeleteClick.bind(this);
-    }
+    this.onDoneChange = this.onDoneChange.bind(this);
+    this.onTextChange = this.onTextChange.bind(this);
+    this.onDeleteClick = this.onDeleteClick.bind(this);
+  }
 
-    onDoneChange(event) {
-      this.setState({ done: event.target.checked });
-    }
+  onDoneChange(event) {
+    this.setState({ done: event.target.checked });
+  }
 
-    onTextChange(event) {
-      this.setState({ text: event.target.text });
-    }
+  onTextChange(event) {
+    this.setState({ text: event.target.text });
+  }
 
-    onDeleteClick() {
-      this.props.remove(this.state.id);
-    }
+  onDeleteClick() {
+    this.props.remove(this.state.id);
+  }
 
-    render() {
-      return (
+  render() {
+    return (
         <div
           className="input-group"
-          style={{paddingBottom: '10px'}}
+          style={{ paddingBottom: '10px' }}
         >
           <span className="input-group-addon">
             <input
@@ -56,6 +56,6 @@ export default class ListItem extends Component {
             </button>
           </span>
         </div>
-      )
-    }
+      );
+  }
 }
